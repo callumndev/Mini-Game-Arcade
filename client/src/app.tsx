@@ -16,7 +16,11 @@ export function App() {
                     <img src={preactLogo} class="logo preact" alt="Preact logo" />
                 </a>
             </div>
-            <h1>Vite + Preact</h1>
+
+            <h1 className="text-3xl font-bold underline">
+                Vite + Preact
+            </h1>
+
             <div class="card">
                 <button onClick={() => setCount((count) => count + 1)}>
                     count is {count}
@@ -25,6 +29,7 @@ export function App() {
                     Edit <code>src/app.tsx</code> and save to test HMR
                 </p>
             </div>
+
             <p class="read-the-docs">
                 Click on the Vite and Preact logos to learn more
             </p>
