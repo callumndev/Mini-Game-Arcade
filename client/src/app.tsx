@@ -1,38 +1,21 @@
 import { useState } from 'preact/hooks'
-import preactLogo from './assets/preact.svg'
-import viteLogo from '/vite.svg'
-import './app.css'
+
 
 export function App() {
     const [count, setCount] = useState(0)
 
     return (
-        <>
-            <div>
-                <a href="https://vitejs.dev" target="_blank">
-                    <img src={viteLogo} class="logo" alt="Vite logo" />
-                </a>
-                <a href="https://preactjs.com" target="_blank">
-                    <img src={preactLogo} class="logo preact" alt="Preact logo" />
-                </a>
-            </div>
+        <div class="container py-10 px-10 mx-0 min-w-full flex flex-col items-center">
+            <h2 class="text-5xl mb-3 text-black">Counter</h2>
+            <p class="text-black">count is {count}</p>
 
-            <h1 className="text-3xl font-bold underline">
-                Vite + Preact
-            </h1>
-
-            <div class="card">
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                </button>
-                <p>
-                    Edit <code>src/app.tsx</code> and save to test HMR
-                </p>
-            </div>
-
-            <p class="read-the-docs">
-                Click on the Vite and Preact logos to learn more
-            </p>
-        </>
+            <button
+                type="button"
+                className="rounded-md bg-indigo-600  mt-3 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                onClick={() => setCount(count => count + 1)}
+            >
+                Add
+            </button>
+        </div>
     )
 }
