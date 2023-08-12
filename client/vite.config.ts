@@ -20,6 +20,7 @@ export default defineConfig({
             "@assets": path.join(clientSrc, "assets"),
             "@pages": path.join(clientSrc, "pages"),
             "@components": path.join(clientSrc, "components"),
+            "@state": path.join(clientSrc, "state"),
         },
     },
 })
