@@ -1,15 +1,19 @@
-import { render } from 'preact'
+import ReactDOM from 'react-dom/client'
+import React from 'react'
 import { Provider } from 'react-redux'
 
 import store from '@state/store.ts'
-import { App } from './app.tsx'
+import App from './App.tsx'
 
 import './tailwind.css'
 
 
-render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
-    document.getElementById('app')!
-)
+ReactDOM
+    .createRoot(document.body)
+    .render(
+        <React.StrictMode>
+            <Provider store={store}>
+                <App />
+            </Provider>
+        </React.StrictMode>
+    );

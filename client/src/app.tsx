@@ -1,12 +1,16 @@
-import { Router } from 'preact-router'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import { Home } from '@pages/index'
 
 
-export function App() {
+function App() {
     return (
-        <Router>
-            <Home path="/" />
-        </Router>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+            </Routes>
+        </BrowserRouter>
     )
 }
+
+export default App

@@ -1,14 +1,13 @@
-import { h, FunctionalComponent } from 'preact';
-import { useState } from 'preact/hooks'
+import React, { useState } from 'react'
 
 
-const Home: FunctionalComponent = (): h.JSX.Element => {
+const Home: React.FC = () => {
     const [count, setCount] = useState(0);
 
     return (
-        <div class="container py-10 px-10 mx-0 min-w-full flex flex-col items-center">
-            <h2 class="text-5xl mb-3 text-black">Counter</h2>
-            <p class="text-black">count is {count}</p>
+        <div className="container py-10 px-10 mx-0 min-w-full flex flex-col items-center">
+            <h2 className="text-5xl mb-3 text-black">Counter</h2>
+            <p className="text-black">count is {count}</p>
 
             <button
                 type="button"

@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 import path from 'path'
-import preact from '@preact/preset-vite'
+import react from '@vitejs/plugin-react'
 
 
 const clientRoot = path.join(__dirname);
@@ -10,7 +10,7 @@ const clientSrc = path.join(clientRoot, "src");
 // https://vitejs.dev/config/
 export default defineConfig({
     // Array of plugins to use
-    plugins: [preact()],
+    plugins: [react()],
 
     // Resolve options
     resolve: {
