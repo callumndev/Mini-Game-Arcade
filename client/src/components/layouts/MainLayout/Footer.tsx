@@ -20,8 +20,8 @@ const footerNavigation = {
         { name: 'Contact', href: 'https://github.com/callumndev' },
     ],
     legal: [
-        { name: 'Privacy', href: '#' },
-        { name: 'Terms', href: '#' },
+        { name: 'Privacy', href: '/legal/privacy' },
+        { name: 'Terms', href: '/legal/terms' },
     ],
     social: [
         {
