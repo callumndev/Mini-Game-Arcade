@@ -23,4 +23,9 @@ export default defineConfig({
             "@state": path.join(clientSrc, "state"),
         },
     },
+
+    // Server options
+    server: {
+        port: 3000
+    },
 })
