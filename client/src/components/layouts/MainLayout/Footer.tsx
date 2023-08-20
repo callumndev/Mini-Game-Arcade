@@ -1,21 +1,10 @@
 import { SiGithub, SiLinkedin } from '@icons-pack/react-simple-icons'
 
+import { useAppSelector } from '@state/hooks'
+import { selectSummaryHubGames } from '@state/features/games/gamesSelectors'
+
 
 const footerNavigation = {
-    games: [
-        {
-            name: 'Tic Tac Toe',
-            href: '/games/tic-tac-toe',
-        },
-        {
-            name: 'Board Strategy Game',
-            href: '/games/board-strategy-game',
-        },
-        {
-            name: 'Word Guessing Game',
-            href: '/games/word-guessing-game',
-        },
-    ],
     support: [
         { name: 'Contact', href: 'https://github.com/callumndev' },
     ],
@@ -43,6 +32,8 @@ const footerNavigation = {
 
 
 const Footer: React.FC = () => {
+    const footerGames = useAppSelector(selectSummaryHubGames);
+
     return (
         <footer className="mt-32 bg-gray-900 sm:mt-56" aria-labelledby="footer-heading">
             <h2 id="footer-heading" className="sr-only">
@@ -67,10 +58,10 @@ const Footer: React.FC = () => {
                             <div className="mt-10 md:mt-0">
                                 <h3 className="text-sm font-semibold leading-6 text-white">Games</h3>
                                 <ul role="list" className="mt-6 space-y-4">
-                                    {footerNavigation.games.map((item) => (
-                                        <li key={item.name}>
+                                    {footerGames.map((item) => (
+                                        <li key={item.id}>
                                             <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
-                                                {item.name}
+                                                {item.displayName}
                                             </a>
                                         </li>
                                     ))}
@@ -115,7 +106,12 @@ const Footer: React.FC = () => {
                     {/* Social media icons */}
                     <div className="flex space-x-6 md:order-2">
                         {footerNavigation.social.map((item) => (
-                            <a key={item.name} href={item.href} target="_blank" className="text-gray-500 hover:text-gray-400">
+                            <a
+                                key={item.name}
+                                href={item.href}
+                                target="_blank"
+                                className="text-gray-500 hover:text-gray-400"
+                            >
                                 <span className="sr-only">{item.name}</span>
                                 <item.icon className="h-6 w-6" aria-hidden="true" />
                             </a>
