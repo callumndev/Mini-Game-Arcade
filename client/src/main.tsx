@@ -9,7 +9,7 @@ import './tailwind.css'
 
 
 ReactDOM
-    .createRoot(document.body)
+    .createRoot(document.getElementById('app')!)
     .render(
         <React.StrictMode>
             <Provider store={store}>
