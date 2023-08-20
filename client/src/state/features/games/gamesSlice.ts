@@ -2,10 +2,12 @@ import { createSlice } from '@reduxjs/toolkit'
 
 import type { IGamesState } from './types/IGamesState'
 
+import mockHubGames from './data/mockHubGames'
+
 
 // Define the initial state
 const initialState: IGamesState = {
-    hubGames: [],
+    hubGames: mockHubGames,
 }
 
 
