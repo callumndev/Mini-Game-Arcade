@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
     const footerGames = useAppSelector(selectSummaryHubGames);
 
     return (
-        <footer className="mt-32 bg-gray-900 sm:mt-56" aria-labelledby="footer-heading">
+        <footer className="mt-12 bg-gray-900 sm:mt-36" aria-labelledby="footer-heading">
             <h2 id="footer-heading" className="sr-only">
                 Footer
             </h2>
