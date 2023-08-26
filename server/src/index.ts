@@ -28,6 +28,9 @@ import accessLog from './middleware/accessLog'
 app.use(accessLog);
 debug('server:express:init')('Middleware applied: access log');
 
+import compression from 'compression'
+app.use(compression({ threshold: 0 }));
+
 
 // Configure nunjucks
 nunjucks.configure('src/views', {
