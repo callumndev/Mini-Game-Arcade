@@ -65,6 +65,13 @@ const Footer: React.FC = () => {
                                             </a>
                                         </li>
                                     ))}
+
+                                    {/* All games button */}
+                                    <li>
+                                        <a href="/games" className="text-sm italic leading-6 text-gray-300 hover:text-white">
+                                            All games
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
