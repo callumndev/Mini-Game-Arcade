@@ -1,7 +1,7 @@
 import { SiGithub, SiLinkedin } from '@icons-pack/react-simple-icons'
 
 import { useAppSelector } from '@state/hooks'
-import { selectSummaryHubGames } from '@state/features/games/gamesSelectors'
+import { selectSummaryGames } from '@state/features/games/gamesSelectors'
 
 
 const footerNavigation = {
@@ -32,7 +32,7 @@ const footerNavigation = {
 
 
 const Footer: React.FC = () => {
-    const footerGames = useAppSelector(selectSummaryHubGames);
+    const summaryGames = useAppSelector(selectSummaryGames);
 
     return (
         <footer className="mt-12 bg-gray-900 sm:mt-36" aria-labelledby="footer-heading">
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
                             <div className="mt-10 md:mt-0">
                                 <h3 className="text-sm font-semibold leading-6 text-white">Games</h3>
                                 <ul role="list" className="mt-6 space-y-4">
-                                    {footerGames.map((item) => (
+                                    {summaryGames.map((item) => (
                                         <li key={item.id}>
                                             <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
                                                 {item.displayName}

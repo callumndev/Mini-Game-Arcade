@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react'
 
 import { useAppSelector } from '@state/hooks'
-import { selectSummaryHubGames } from '@state/features/games/gamesSelectors'
+import { selectSummaryGames } from '@state/features/games/gamesSelectors'
 
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 
@@ -16,7 +16,7 @@ function classNames(...classes: any[]) {
 
 const Header: React.FC = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const headerGames = useAppSelector(selectSummaryHubGames);
+    const summaryGames = useAppSelector(selectSummaryGames);
 
     return (
         <header className="bg-white">
@@ -64,7 +64,7 @@ const Header: React.FC = () => {
                             <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                                 {/* Games */}
                                 <div className="p-4">
-                                    {headerGames.map((item) => (
+                                    {summaryGames.map((item) => (
                                         <div
                                             key={item.id}
                                             className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
@@ -161,7 +161,7 @@ const Header: React.FC = () => {
 
                                             {/* Games list */}
                                             <Disclosure.Panel className="mt-2 space-y-2">
-                                                {headerGames.map((item) => (
+                                                {summaryGames.map((item) => (
                                                     <Disclosure.Button
                                                         key={item.id}
                                                         as="a"

@@ -1,20 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import type { IGamesState } from './types/IGamesState'
+import gamesAdapter from './gamesAdapter'
 
 import mockHubGames from './data/mockHubGames'
 
-
-// Define the initial state
-const initialState: IGamesState = {
-    hubGames: mockHubGames,
-}
+import type { IGame } from './types/IGame'
 
 
-export const gamesSlice = createSlice({
+const gamesSlice = createSlice({
     name: 'games',
-    initialState,
-    reducers: {},
+    initialState: gamesAdapter.addMany(gamesAdapter.getInitialState(), mockHubGames),
+    reducers: {
+        gamesReceived(state, action: { type: string; payload: IGame[]; }) {
+            gamesAdapter.setAll(state, action.payload);
+        },
+    },
 })
 
-export default gamesSlice.reducer;
+export default gamesSlice;
