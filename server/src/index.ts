@@ -53,6 +53,12 @@ for (const path of frontendPaths) {
 }
 
 
+// Register API router
+import APIRouter, { path as APIPath } from './api'
+app.use(APIPath, APIRouter);
+debug('server:express:init')('Registered API router at ' + APIPath);
+
+
 // Catch all other routes to catch 404
 app.use((_req: Request, _res: Response, next: NextFunction) =>
     next(new ExpressError('Sorry, the page you\'re looking for doesn\'t exist.', 404)));
